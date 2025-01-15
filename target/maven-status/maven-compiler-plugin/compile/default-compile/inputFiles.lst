@@ -1,0 +1,6 @@
+/Volumes/Dev Space/Java/Spring Boot/journalApp/src/main/java/com/learning/journalApp/JournalAppApplication.java
+/Volumes/Dev Space/Java/Spring Boot/journalApp/src/main/java/com/learning/journalApp/controller/HealthCheck.java
+/Volumes/Dev Space/Java/Spring Boot/journalApp/src/main/java/com/learning/journalApp/controller/JournalEntryController.java
+/Volumes/Dev Space/Java/Spring Boot/journalApp/src/main/java/com/learning/journalApp/controller/JournalEntryControllerV2.java
+/Volumes/Dev Space/Java/Spring Boot/journalApp/src/main/java/com/learning/journalApp/entity/JournalEntry.java
+/Volumes/Dev Space/Java/Spring Boot/journalApp/src/main/java/com/learning/journalApp/repository/JournalEntryRepository.java
