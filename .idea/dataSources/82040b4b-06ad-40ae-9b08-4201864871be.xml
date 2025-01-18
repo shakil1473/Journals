@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="mongodb+srv://shakil1473:gomati1473@learningcluster.ncws2.mongodb.net/?retryWrites=true&amp;w=majority&amp;appName=LearningCluster">
+  <database-model serializer="dbm" dbms="MONGO" family-id="MONGO" format-version="4.53">
+    <root id="1">
+      <ServerVersion>8.0.4</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="admin"/>
+    <schema id="3" parent="1" name="config"/>
+    <schema id="4" parent="1" name="journaldb"/>
+    <schema id="5" parent="1" name="local"/>
+    <schema id="6" parent="1" name="school"/>
+  </database-model>
+</dataSource>

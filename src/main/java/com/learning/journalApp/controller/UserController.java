@@ -2,10 +2,12 @@ package com.learning.journalApp.controller;
 
 import com.learning.journalApp.entity.User;
 import com.learning.journalApp.service.UserService;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -15,6 +17,11 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @GetMapping(value="/")
+    public void redirect(HttpServletResponse response) throws IOException {
+        response.sendRedirect("https://web.postman.co");
+    }
+    
     @PostMapping
     public void createUser(@RequestBody User user) {
         userService.saveUser(user);

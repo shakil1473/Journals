@@ -3,15 +3,23 @@ package com.learning.journalApp.controller;
 import com.learning.journalApp.entity.Journal;
 import com.learning.journalApp.helper.Helpers;
 import com.learning.journalApp.service.JournalService;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
 
 @RestController
 @RequestMapping("/journal")
 public class JournalController {
     @Autowired
     private JournalService journalService;
+
+    @GetMapping(value="/")
+    public void redirect(HttpServletResponse response) throws IOException {
+        response.sendRedirect("https://web.postman.co");
+    }
 
     @PostMapping("{username}")
     public ResponseEntity<?> createJournal(@RequestBody Journal journal, @PathVariable String username) {

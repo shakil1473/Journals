@@ -39,9 +39,13 @@ public class JournalService {
     }
 
     public ResponseEntity<?> findAllUserJournals(String username) {
-        List<Journal> journals = userService.findUserByUsername(username).getJournalEntries();
+        User user = userService.findUserByUsername(username);
+        if(user == null) {
+            return new ResponseEntity<>("User not found", HttpStatus.NO_CONTENT);
+        }
+        List<Journal> journals = user.getJournalEntries();
         if(journals.isEmpty())
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>("Sorry! You don't have any Journals", HttpStatus.NO_CONTENT);
 
         return new ResponseEntity<>(journals, HttpStatus.OK);
     }
