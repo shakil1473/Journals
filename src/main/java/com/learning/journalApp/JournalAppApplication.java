@@ -8,6 +8,7 @@ import org.springframework.data.mongodb.MongoTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+/// password for db is gomati1473
 @SpringBootApplication
 public class JournalAppApplication {
 
