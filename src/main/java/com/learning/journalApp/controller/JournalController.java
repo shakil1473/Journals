@@ -4,6 +4,7 @@ import com.learning.journalApp.entity.Journal;
 import com.learning.journalApp.helper.Helpers;
 import com.learning.journalApp.service.JournalService;
 import jakarta.servlet.http.HttpServletResponse;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,30 +25,29 @@ public class JournalController {
         response.sendRedirect("https://web.postman.co");
     }
 
-    @PostMapping("{username}")
-    public ResponseEntity<?> createJournal(@RequestBody Journal journal, @PathVariable String username) {
-        helpers.addDates(journal);
-        return journalService.saveJournal(journal, username);
+    @PostMapping
+    public ResponseEntity<?> createJournal(@RequestBody Journal journal) {
+        return journalService.saveJournal(journal);
     }
 
-    @GetMapping("/{username}")
-    public ResponseEntity<?> getAllJournalsOfUser(@PathVariable String username) {
-        return journalService.findAllUserJournals(username);
+    @GetMapping
+    public ResponseEntity<?> getAllJournalsOfUser() {
+        return journalService.findAllUserJournals();
     }
 
     @GetMapping("/id/{journalId}")
-    public ResponseEntity<Journal> getJournalById(@PathVariable String journalId) {
-        return journalService.findById(journalId);
+    public ResponseEntity<Journal> getJournalById(@PathVariable ObjectId journalId) {
+        return journalService.findJournalById(journalId);
     }
 
-    @PutMapping("/update")
-    public ResponseEntity<Journal> updateJournal(@RequestBody Journal journal, @PathVariable String journalId) {
-        return journalService.update(journalId, journal);
+    @PutMapping("/update/{journalId}")
+    public ResponseEntity<Journal> updateJournal(@RequestBody Journal journal, @PathVariable ObjectId journalId) {
+        return journalService.updateJournal(journalId, journal);
     }
 
     @DeleteMapping("/delete/{journalId}")
-    public ResponseEntity<?> deleteJournal(@PathVariable String journalId, @RequestParam String username) {
-        return journalService.delete(journalId, username);
+    public ResponseEntity<?> deleteJournal(@PathVariable ObjectId journalId) {
+        return journalService.delete(journalId);
     }
 
     @DeleteMapping("/delete")

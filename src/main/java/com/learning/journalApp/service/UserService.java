@@ -30,7 +30,7 @@ public class UserService {
         return user;
     }
 
-    public ResponseEntity<?> updateUserPassword(User user) {
+    public ResponseEntity<?> updateUserLoginInfo(User user) {
         Authentication authentication = helpers.getAuthentication();
         User userInDb = findUserByUsername(authentication.getName());
         if(userInDb != null) {
@@ -41,6 +41,10 @@ public class UserService {
         }
 
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
+    public void addOrRemoveJournalToUser(User user) {
+        userRepository.save(user);
     }
 
     public ResponseEntity<?> deleteUser() {

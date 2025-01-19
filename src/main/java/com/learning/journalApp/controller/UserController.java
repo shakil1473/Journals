@@ -16,7 +16,7 @@ public class UserController {
 
     @PutMapping
     public ResponseEntity<?> updateUser(@RequestBody User user) {
-        return userService.updateUserPassword(user);
+        return userService.updateUserLoginInfo(user);
     }
 
     @DeleteMapping
