@@ -16,6 +16,9 @@ public class JournalController {
     @Autowired
     private JournalService journalService;
 
+    @Autowired
+    private Helpers helpers;
+
     @GetMapping(value="/")
     public void redirect(HttpServletResponse response) throws IOException {
         response.sendRedirect("https://web.postman.co");
@@ -23,7 +26,7 @@ public class JournalController {
 
     @PostMapping("{username}")
     public ResponseEntity<?> createJournal(@RequestBody Journal journal, @PathVariable String username) {
-        Helpers.addDates(journal);
+        helpers.addDates(journal);
         return journalService.saveJournal(journal, username);
     }
 

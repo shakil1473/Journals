@@ -20,8 +20,12 @@ public class JournalService {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private Helpers helpers;
+
     @Transactional
     public ResponseEntity<?> saveJournal(Journal journal, String username) {
+        /*
         try {
             User user = userService.findUserByUsername(username);
             if(user == null) {
@@ -34,8 +38,10 @@ public class JournalService {
             userService.addJournals(user, newJournal);
             return new ResponseEntity<>(newJournal, HttpStatus.OK);
         } catch (Exception e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+
         }
+         */
+        return new ResponseEntity<>(null, HttpStatus.OK);
     }
 
     public ResponseEntity<?> findAllUserJournals(String username) {
@@ -67,22 +73,24 @@ public class JournalService {
         if (oldJournal != null) {
             oldJournal.setTitle(journal.getTitle());
             oldJournal.setContent(journal.getContent());
-            Helpers.updateModifiedDate(journal);
+            helpers.updateModifiedDate(journal);
 
             return new ResponseEntity<>(journalRepository.save(oldJournal), HttpStatus.OK);
         }
 
-        Helpers.addDates(journal);
+        helpers.addDates(journal);
         return new ResponseEntity<>(journalRepository.save(journal), HttpStatus.OK);
     }
     @Transactional
     public ResponseEntity<?> delete(String id, String username) {
+        /*
         Journal journal = findJournalById(id);
         if(journal != null) {
             userService.removeJournals(username, journal);
             journalRepository.delete(journal);
             return new ResponseEntity<>(journal, HttpStatus.OK);
         }
+         */
         return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
