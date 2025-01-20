@@ -5,16 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61256a9c-2ca9-489d-a208-4bffb794e8ce" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/learning/journalApp/controller/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learning/journalApp/controller/JournalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/learning/journalApp/controller/JournalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learning/journalApp/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/learning/journalApp/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learning/journalApp/repository/JournalRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/learning/journalApp/repository/JournalRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learning/journalApp/service/JournalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/learning/journalApp/service/JournalService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/learning/journalApp/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/learning/journalApp/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/learning/journalApp/controller/PublicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/learning/journalApp/controller/PublicController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/learning/journalApp/helper/Helpers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/learning/journalApp/helper/Helpers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/learning/journalApp/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/learning/journalApp/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/learning/journalApp/controller/JournalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/learning/journalApp/controller/JournalController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/learning/journalApp/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/learning/journalApp/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/learning/journalApp/repository/JournalRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/learning/journalApp/repository/JournalRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/learning/journalApp/service/JournalService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/learning/journalApp/service/JournalService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/learning/journalApp/helper/Helpers.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/learning/journalApp/helper/Helpers.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/learning/journalApp/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/learning/journalApp/service/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +49,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.JournalAppApplication.executor": "Run",
+    "Spring Boot.JournalAppApplication.executor": "Debug",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Volumes/Dev Space/Java/Spring Boot/Github/Journals",
@@ -101,7 +98,7 @@
       <workItem from="1737063889152" duration="60000" />
       <workItem from="1737129444328" duration="166000" />
       <workItem from="1737226311710" duration="1649000" />
-      <workItem from="1737227979015" duration="20918000" />
+      <workItem from="1737227979015" duration="27317000" />
     </task>
     <servers />
   </component>
@@ -117,24 +114,14 @@
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/learning/journalApp/controller/JournalController.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/learning/journalApp/service/JournalService.java</url>
           <line>64</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/learning/journalApp/controller/JournalController.java</url>
-          <line>44</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/learning/journalApp/service/JournalService.java</url>
-          <line>78</line>
-          <option name="timeStamp" value="15" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/learning/journalApp/service/UserService.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
