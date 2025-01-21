@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: Journals
+  data:
+    mongodb:
+      uri: mongodb+srv://shakil1473:gomati1473@learningcluster.ncws2.mongodb.net/?retryWrites=true&w=majority&appName=LearningCluster
+      database: journaldb
+      auto-index-creation: true
+server:
+  port: 8081
+  servlet:
+    context-path: /journal
