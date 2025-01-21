@@ -1,0 +1,5 @@
+com/learning/journalApp/config/AuthorizationConfig.class
+com/learning/journalApp/controller/AdminController.class
+com/learning/journalApp/config/TransactionConfig.class
+com/learning/journalApp/config/SecurityConfig.class
+com/learning/journalApp/JournalAppApplication.class
