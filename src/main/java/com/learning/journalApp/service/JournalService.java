@@ -4,7 +4,11 @@ import com.learning.journalApp.entity.Journal;
 import com.learning.journalApp.entity.User;
 import com.learning.journalApp.helper.Helpers;
 import com.learning.journalApp.repository.JournalRepository;
+import lombok.extern.slf4j.Slf4j;
+import lombok.extern.slf4j.XSlf4j;
 import org.bson.types.ObjectId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +21,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Component
+@Slf4j
 public class JournalService {
     @Autowired
     private JournalRepository journalRepository;
@@ -44,6 +49,7 @@ public class JournalService {
             userService.addOrRemoveJournalToUser(user);
             return new ResponseEntity<>(newJournal, HttpStatus.OK);
         } catch (Exception e) {
+            log.error("Save Journal failed", e, e.getMessage());
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
@@ -52,11 +58,14 @@ public class JournalService {
         Authentication authentication = helpers.getAuthentication();
         User user = userService.findUserByUsername(authentication.getName());
         if(user == null) {
+            log.error("User not found");
             return new ResponseEntity<>("User not found", HttpStatus.NO_CONTENT);
         }
         List<Journal> journals = user.getJournalEntries();
-        if(journals.isEmpty())
+        if(journals.isEmpty()) {
+            log.error("User doesn't have any journal entries");
             return new ResponseEntity<>("Sorry! You don't have any Journals", HttpStatus.NO_CONTENT);
+        }
 
         return new ResponseEntity<>(journals, HttpStatus.OK);
     }
@@ -85,11 +94,12 @@ public class JournalService {
                 oldJournal.setTitle(journal.getTitle());
                 oldJournal.setContent(journal.getContent());
                 helpers.updateModifiedDate(journal);
-
+                log.info("Journal updated");
                 return new ResponseEntity<>(journalRepository.save(oldJournal), HttpStatus.OK);
             }
         }
 
+        log.info("Journal not found");
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
     @Transactional
@@ -107,6 +117,7 @@ public class JournalService {
             }
         }
 
+        log.info("Not Found");
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 

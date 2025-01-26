@@ -1,14 +1,14 @@
 spring:
   application:
-    name: Journals
+    name: journal
   data:
     mongodb:
       uri: mongodb+srv://shakil1473:gomati1473@learningcluster.ncws2.mongodb.net/?retryWrites=true&w=majority&appName=LearningCluster
-      database: journal
+      database: journals
       auto-index-creation: true
 
-server:
-  port: 8081 # this will the localhost port
-  servlet:
-    context-path: /journal #this says that we need to add /journal after the local address
-    #path will be localhost:8081/journal/journal for journals. for user, last journal will be user
+#server:
+  #port: 8081 # this will the localhost port
+  #servlet:
+    #context-path: /journal #this says that we need to add /journal after the local address
+    #path will be localhost: 8081/journal/journal for journals. for user, last journal will be user
